@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Javascript4</title>
+</head>
+<body>
+    <button id="showDateButton">Show Date</button>
+    <p id="date"></p>
+
+    <button id="showTimeButton">Show Time</button>
+    <p id="time"></p>
+
+    <script>
+        function formatDate(date) {
+            const day = date.getDate();
+            const month = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(date);
+            const year = date.getFullYear();
+            return `${day}/${month}/${year}`;
+        
+        }
+
+        const currentDate = new Date();
+
+        document.getElementById("showDateButton").addEventListener("click", function () {
+            document.getElementById("date").textContent = formatDate(currentDate);
+        });
+
+        document.getElementById("showTimeButton").addEventListener("click", function () {
+            document.getElementById("time").textContent = currentDate.toString();
+        });
+    </script>
+</body>
+</html>

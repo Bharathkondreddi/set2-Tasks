@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript2</title>
+</head>
+<body>
+    <h1>Alphabetical Order</h1>
+    <label for="textInput">Enter a string:</label>
+    <input type="text" id="textInput" placeholder="Enter a string">
+    <button onclick="orderString()">Order</button>
+    <p id="result"></p>
+
+    <script>
+        function orderString() {
+            var inputValue = document.getElementById("textInput").value;
+
+            var orderedString = inputValue.split('').sort().join('');
+
+            document.getElementById("result").innerHTML = "Ordered String: " + orderedString;
+        }
+    </script>
+</body>
+</html>
